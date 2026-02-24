@@ -31,12 +31,12 @@ public class SkierServicesImpl implements ISkierServices {
     }
 
     @Override
-    public Skier retrieveSkier(Long idSkier) {
-        return skierRepository.findById(idSkier).orElse(null);
+    public Skier retrieveSkier(Long numSkier) {
+        return skierRepository.findById(numSkier).orElse(null);
     }
 
     @Override
-    public void deleteSkier(Long idSkier) {
-        skierRepository.deleteById(idSkier);
+    public void deleteSkier(Long numSkier) {
+        skierRepository.deleteById(numSkier);
     }
 }

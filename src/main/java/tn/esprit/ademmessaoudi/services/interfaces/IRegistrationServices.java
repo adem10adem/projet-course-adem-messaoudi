@@ -12,8 +12,8 @@ public interface IRegistrationServices {
 
     Registration updateRegistration(Registration registration);
 
-    Registration retrieveRegistration(Long idRegistration);
+    Registration retrieveRegistration(Long numRegistration);
 
-    void deleteRegistration(Long idRegistration);
+    void deleteRegistration(Long numRegistration);
 }
 

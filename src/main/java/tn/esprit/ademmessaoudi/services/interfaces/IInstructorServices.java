@@ -12,8 +12,8 @@ public interface IInstructorServices {
 
     Instructor updateInstructor(Instructor instructor);
 
-    Instructor retrieveInstructor(Long idInstructor);
+    Instructor retrieveInstructor(Long numInstructor);
 
-    void deleteInstructor(Long idInstructor);
+    void deleteInstructor(Long numInstructor);
 }
 

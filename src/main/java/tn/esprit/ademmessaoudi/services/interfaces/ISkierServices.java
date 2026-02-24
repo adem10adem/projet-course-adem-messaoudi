@@ -12,8 +12,8 @@ public interface ISkierServices {
 
     Skier updateSkier(Skier skier);
 
-    Skier retrieveSkier(Long idSkier);
+    Skier retrieveSkier(Long numSkier);
 
-    void deleteSkier(Long idSkier);
+    void deleteSkier(Long numSkier);
 }
 

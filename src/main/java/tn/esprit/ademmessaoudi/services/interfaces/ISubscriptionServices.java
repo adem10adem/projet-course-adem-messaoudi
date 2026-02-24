@@ -12,8 +12,8 @@ public interface ISubscriptionServices {
 
     Subscription updateSubscription(Subscription subscription);
 
-    Subscription retrieveSubscription(Long idSubscription);
+    Subscription retrieveSubscription(Long numSub);
 
-    void deleteSubscription(Long idSubscription);
+    void deleteSubscription(Long numSub);
 }
 
