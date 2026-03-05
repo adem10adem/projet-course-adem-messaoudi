@@ -6,4 +6,3 @@ import tn.esprit.ademmessaoudi.entities.Skier;
 @Repository
 public interface SkierRepository extends JpaRepository<Skier, Long> {
 }
-

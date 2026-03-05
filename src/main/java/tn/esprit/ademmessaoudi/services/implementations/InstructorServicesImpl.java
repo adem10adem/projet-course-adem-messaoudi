@@ -30,12 +30,12 @@ public class InstructorServicesImpl implements IInstructorServices {
     }
 
     @Override
-    public Instructor retrieveInstructor(Long numInstructor) {
-        return instructorRepository.findById(numInstructor).orElse(null);
+    public Instructor retrieveInstructor(Long idInstructor) {
+        return instructorRepository.findById(idInstructor).orElse(null);
     }
 
     @Override
-    public void deleteInstructor(Long numInstructor) {
-        instructorRepository.deleteById(numInstructor);
+    public void deleteInstructor(Long idInstructor) {
+        instructorRepository.deleteById(idInstructor);
     }
 }

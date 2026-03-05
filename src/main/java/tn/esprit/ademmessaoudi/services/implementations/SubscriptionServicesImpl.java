@@ -31,12 +31,12 @@ public class SubscriptionServicesImpl implements ISubscriptionServices {
     }
 
     @Override
-    public Subscription retrieveSubscription(Long numSub) {
-        return subscriptionRepository.findById(numSub).orElse(null);
+    public Subscription retrieveSubscription(Long idSubscription) {
+        return subscriptionRepository.findById(idSubscription).orElse(null);
     }
 
     @Override
-    public void deleteSubscription(Long numSub) {
-        subscriptionRepository.deleteById(numSub);
+    public void deleteSubscription(Long idSubscription) {
+        subscriptionRepository.deleteById(idSubscription);
     }
 }

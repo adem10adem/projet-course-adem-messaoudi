@@ -3,17 +3,17 @@ package tn.esprit.ademmessaoudi.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Skier implements Serializable {
+public class Skier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +30,7 @@ public class Skier implements Serializable {
     @OneToMany(mappedBy = "skier", cascade = CascadeType.ALL)
     private List<Registration> registrations;
 
-    // Many-to-many bidirectional association with Piste
+
     @ManyToMany
     @JoinTable(
             name = "skier_piste",

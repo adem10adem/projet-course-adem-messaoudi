@@ -1,6 +1,5 @@
 package tn.esprit.ademmessaoudi.services.implementations;
 
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.ademmessaoudi.Repository.RegistrationRepository;
@@ -31,13 +30,13 @@ public class RegistrationServicesImpl implements IRegistrationServices {
     }
 
     @Override
-    public Registration retrieveRegistration(Long numRegistration) {
-        return registrationRepository.findById(numRegistration).orElse(null);
+    public Registration retrieveRegistration(Long idRegistration) {
+        return registrationRepository.findById(idRegistration).orElse(null);
     }
 
     @Override
-    public void deleteRegistration(Long numRegistration) {
-        registrationRepository.deleteById(numRegistration);
+    public void deleteRegistration(Long idRegistration) {
+        registrationRepository.deleteById(idRegistration);
     }
 }
 
