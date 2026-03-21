@@ -3,6 +3,7 @@ package tn.esprit.ademmessaoudi.controllers;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.ademmessaoudi.entities.Registration;
+import tn.esprit.ademmessaoudi.services.implementations.RegistrationServicesImpl;
 import tn.esprit.ademmessaoudi.services.interfaces.IRegistrationServices;
 
 import java.util.List;
@@ -33,4 +34,28 @@ public class RegistrationController {
     public List<Registration> retrieveAllRegistrations(){
         return registrationServices.retrieveAllRegistrations();
     }
+
+    @PutMapping("/assignRegistrationToCourse/{numCourse}/{numRegistration}")
+    public Registration assignRegistrationToCourse(@PathVariable("numRegistration") Long numRegistration,
+                                                   @PathVariable("numCourse") Long numCourse){
+       Registration reg = registrationServices.assignRegistrationToCourse(numRegistration,numCourse);
+       return reg;
+    }
+
+@PostMapping("/addRegistrationAndAssignToSkierAndCourse/{numSkier}/{numCourse}")
+@ResponseBody
+public Registration addRegistrationAndAssignToSkierAndCourse(@RequestBody Registration registration,@PathVariable("numSkier") Long numSkier, @PathVariable("numCourse") Long numCourse){
+
+
+        Registration regist = registrationServices.addRegistrationAndAssignToSkierAndCourse(registration,numSkier,numCourse);
+return regist;
+    }
+
+    @PostMapping("/addRegistrationAndAssignToSkier/{numSkieur}")
+    @ResponseBody
+    public Registration addRegistrationAndAssignToSkier(@RequestBody Registration registration, @PathVariable("numSkieur") Long numSkieur){
+        Registration registration1 = registrationServices.addRegistrationAndAssignToSkier(registration,numSkieur);
+        return registration1;
+    }
 }
+

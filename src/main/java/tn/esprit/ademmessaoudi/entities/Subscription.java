@@ -1,5 +1,6 @@
 package tn.esprit.ademmessaoudi.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import tn.esprit.ademmessaoudi.Enum.TypeSubscription;
@@ -22,5 +23,6 @@ public class Subscription {
     @Enumerated(EnumType.STRING)
     private TypeSubscription typeSub;
     @OneToOne
+    @JsonIgnore
     private Skier skier;
 }

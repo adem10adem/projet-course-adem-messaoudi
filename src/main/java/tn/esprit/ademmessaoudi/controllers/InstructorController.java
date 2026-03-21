@@ -2,7 +2,9 @@ package tn.esprit.ademmessaoudi.controllers;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.ademmessaoudi.Enum.Support;
 import tn.esprit.ademmessaoudi.entities.Instructor;
+import tn.esprit.ademmessaoudi.entities.Registration;
 import tn.esprit.ademmessaoudi.services.interfaces.IInstructorServices;
 
 import java.util.List;
@@ -33,4 +35,18 @@ public class InstructorController {
     public List<Instructor> retrieveAllInstructors(){
         return instructorServices.retrieveAllInstructors();
     }
-}
+
+    @PostMapping("/addInstructorAndAssignToCourse/{numCourse}")
+    @ResponseBody
+    public Instructor addInstructorAndAssignToCourse(@RequestBody Instructor instructor, @PathVariable("numCourse") Long numCourse){
+       Instructor instruct = instructorServices.addInstructorAndAssignToCourse( instructor,  numCourse);
+        return instruct ;
+    }
+
+
+    @GetMapping("/numWeeksCourseOfInstructorBySupport/{numInstructor}/{support}")
+    public List<Integer> numWeeksCourseOfInstructorBySupport(@PathVariable("numInstructor") Long numInstructor, @PathVariable("support") Support support){
+        return instructorServices.numWeeksCourseOfInstructorBySupport(numInstructor, support);
+    }
+
+    }
